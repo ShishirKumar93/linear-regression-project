@@ -306,7 +306,6 @@ df['quarter'] = df.date.dt.quarter
 df['quarter'] = df.year*10 +  df.quarter
 #df.drop(columns = 'quarterid', inplace = True)
 
-
 ## create dataset at a quarterly level
 data = df.groupby('quarter').agg({'rolling_miles_12m' : ['mean']}).reset_index()
 data.columns = ['quarter','avg_miles_rollingsum_12m']
